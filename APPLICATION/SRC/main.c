@@ -1,9 +1,9 @@
-#include "main.h"
+
+#include "common_defines.h"
+#include "target_api.h"
 
 int main( void )
 {
-  init_ifc();
-  led_on_ifc( LED_1 );
-  
+  led_on( LED_1 );
   return 0;
 }

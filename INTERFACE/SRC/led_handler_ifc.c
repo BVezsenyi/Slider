@@ -10,6 +10,7 @@ void led_on_ifc( LED_ID led_id )
 
     fn_ptr = get_function_pointer_by_id( FN_LED_ON );
     
+    //HW Impl:
     (*fn_ptr)( led_id );
 }
  

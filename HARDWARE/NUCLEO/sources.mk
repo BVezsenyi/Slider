@@ -10,18 +10,22 @@ STARTUP:=startup_stm32f303xe.s
 GENERAL_ASM_LIST:= \
 $(CURR_DIR)SRC/$(STARTUP) \
 
-GENERAL_SRC_LIST+= \
-$(CURR_DIR)SRC/hw_api.c \
-$(CURR_DIR)SRC/hw_init.c \
-$(CURR_DIR)SRC/hw_led_handler.c \
-$(CURR_DIR)SRC/system_stm32f3xx.c \
-$(CURR_DIR)SRC/stm32f3xx_hal_gpio.c \
-$(CURR_DIR)SRC/stm32f3xx_hal_rcc.c \
-$(CURR_DIR)SRC/stm32f3xx_hal_rcc_ex.c \
-$(CURR_DIR)SRC/stm32f3xx_hal.c \
-$(CURR_DIR)SRC/stm32f3xx_hal_cortex.c \
-$(CURR_DIR)SRC/stm32f3xx_hal_flash.c \
-$(CURR_DIR)SRC/stm32f3xx_hal_flash_ex.c \
+SRC_LIST = \
+init.c \
+led_handler.c \
+time_handler.c \
+system_stm32f3xx.c \
+stm32f3xx_hal_gpio.c \
+stm32f3xx_hal_rcc.c \
+stm32f3xx_hal_rcc_ex.c \
+stm32f3xx_hal.c \
+stm32f3xx_hal_cortex.c \
+stm32f3xx_hal_flash.c \
+stm32f3xx_hal_flash_ex.c \
+stm32f3xx_it.c \
+
+GENERAL_SRC_LIST := $(GENERAL_SRC_LIST) \
+$(addprefix $(CURR_DIR)SRC/,$(SRC_LIST))
 
 INCLUDE+=-I$(CURR_DIR)HEADER/
 

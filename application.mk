@@ -5,7 +5,6 @@ tbird \
 simulator
 
 include ./APPLICATION/sources.mk
-include ./INTERFACE/sources.mk
 include ./ERROR_HANDLER/sources.mk
 
 ifeq ($(MAKECMDGOALS),simulator)

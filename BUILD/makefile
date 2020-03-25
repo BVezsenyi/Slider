@@ -1,8 +1,6 @@
 OBJ_DIR=OBJ
 SRC_DIR=SRC
 
-#Check if goal is valid: 
-
 AR:=$(COMPILER_PREFIX)ar
 CC:=$(COMPILER_PREFIX)gcc
 CP:=$(COMPILER_PREFIX)objcopy

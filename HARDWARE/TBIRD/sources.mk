@@ -5,10 +5,12 @@ TARGET_NAME:=tbird
 HEX_FILE:= $(TARGET_DIR)$(TARGET_NAME).hex
 EXE_FILE = $(TARGET_DIR)$(TARGET_NAME).elf
 
+SRC_LIST = \
+init.c \
+led_handler.c
+
 GENERAL_SRC_LIST := $(GENERAL_SRC_LIST) \
-$(CURR_DIR)SRC/hw_api.c \
-$(CURR_DIR)SRC/hw_init.c \
-$(CURR_DIR)SRC/hw_led_handler.c
+$(addprefix $(CURR_DIR)SRC/,$(SRC_LIST))
 
 INCLUDE := $(INCLUDE) \
 -I$(CURR_DIR)HEADER/
